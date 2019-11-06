@@ -26,24 +26,19 @@ def iteration (max_pages):
         opening = requests.get(url)
         save = opening.text
 
-
         soup = BeautifulSoup(save, 'html.parser')
         class_item = (div.a for div in soup.find_all('div', {'class': 'item'}))
-       # print(class_item)
 
         for l in class_item:
             links = 'https://pixabay.com/' + str(l.get("href"))
-            #print(links)
             if 'https://pixabay.com/fr/images/search/pomme%20rouge/?pagi='+str(pages) in links:
                 continue
 
             opening = requests.get(links)
             save = opening.text
-            # print(save)
 
             soup = BeautifulSoup(save, 'html.parser')
             main_site = soup.find_all('img', {'itemprop': 'contentURL'})
-            #  print(main_site)
 
             for t in main_site:
                 src = t.get('src')
@@ -76,33 +71,26 @@ def int_pom_rouge(max_pages):
     while pages <= max_pages:
         url = ('https://pixabay.com/fr/images/search/ananas/?pagi='+str(pages))
 
-        # if pages%2 == 0:
-
-        # else:
-        # url = 'https://pixabay.com/images/search/pomme/'+str(pages)
-
         opening = requests.get(url)
 
         save = opening.text
-        # print(save)
 
         soup = BeautifulSoup(save, 'html.parser')
         class_item = (div.a for div in soup.find_all('div', {'class': 'item'}))
-        # print(class_item)
 
         for l in class_item:
             links = 'https://pixabay.com/' + str(l.get("href"))
-            # print(links)
+        
             if 'https://pixabay.com/fr/images/search/ananas/?pagi='+str(pages) in links:
                 continue
 
             opening = requests.get(links)
             save = opening.text
-            # print(save)
+        
 
             soup = BeautifulSoup(save, 'html.parser')
             main_site = soup.find_all('img', {'itemprop': 'contentURL'})
-            #  print(main_site)
+         
 
             for t in main_site:
                 src = t.get('src')
@@ -113,7 +101,7 @@ def int_pom_rouge(max_pages):
 
                     full_name = ("./ananas/" + str(name) + "Ananas" + '.jpg')
 
-                    # urllib.request.urlretrieve(src, full_name)
+                    
 
                     class AppURLopener(urllib.request.FancyURLopener):
                         version = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.69 Safari/537.36"
@@ -135,33 +123,29 @@ def int_banane(max_pages):
         url = ('https://pixabay.com/fr/images/search/banane/?pagi='+str(pages))  # incrementer les page
         print(url)
 
-        # if pages%2 == 0:
-
-        # else:
-        # url = 'https://pixabay.com/images/search/pomme/'+str(pages)
 
         opening = requests.get(url)
 
         save = opening.text
-        # print(save)
+        
 
         soup = BeautifulSoup(save, 'html.parser')
         class_item = (div.a for div in soup.find_all('div', {'class': 'item'}))
-        # print(class_item)
+       
 
         for l in class_item:
             links = 'https://pixabay.com/' + str(l.get("href"))
-            # print(links)
+            
             if 'https://pixabay.com/fr/images/search/banane/?pagi='+str(pages) in links: # incrementer les page
                 continue
 
             opening = requests.get(links)
             save = opening.text
-            # print(save)
+            
 
             soup = BeautifulSoup(save, 'html.parser')
             main_site = soup.find_all('img', {'itemprop': 'contentURL'})
-            #  print(main_site)
+       
 
             for t in main_site:
                 src = t.get('src')
@@ -172,7 +156,7 @@ def int_banane(max_pages):
 
                     full_name = ("./banane/" + str(name) + "Banane" + '.jpg')
 
-                    # urllib.request.urlretrieve(src, full_name)
+                   
 
                     class AppURLopener(urllib.request.FancyURLopener):
                         version = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.69 Safari/537.36"
@@ -195,21 +179,21 @@ int_banane(5)
 
         soup = BeautifulSoup(save, 'html.parser')
         class_item = (div.a for div in soup.find_all('div', {'class': 'item'}))
-       # print(class_item)
+     
 
         for l in class_item:
             links = 'https://pixabay.com/' + str(l.get("href"))
-            #print(links)
+    
             if 'https://pixabay.com/fr/images/search/pomme%20rouge/?pagi='+str(pages) in links:
                 continue
 
             opening = requests.get(links)
             save = opening.text
-            # print(save)
+        
 
             soup = BeautifulSoup(save, 'html.parser')
             main_site = soup.find_all('img', {'itemprop': 'contentURL'})
-            #  print(main_site)
+           
 
             for t in main_site:
                 src = t.get('src')
@@ -242,33 +226,28 @@ def int_pom_rouge(max_pages):
     while pages <= max_pages:
         url = ('https://pixabay.com/fr/images/search/ananas/?pagi='+str(pages))
 
-        # if pages%2 == 0:
-
-        # else:
-        # url = 'https://pixabay.com/images/search/pomme/'+str(pages)
-
         opening = requests.get(url)
 
         save = opening.text
-        # print(save)
+       
 
         soup = BeautifulSoup(save, 'html.parser')
         class_item = (div.a for div in soup.find_all('div', {'class': 'item'}))
-        # print(class_item)
+      
 
         for l in class_item:
             links = 'https://pixabay.com/' + str(l.get("href"))
-            # print(links)
+       
             if 'https://pixabay.com/fr/images/search/ananas/?pagi='+str(pages) in links:
                 continue
 
             opening = requests.get(links)
             save = opening.text
-            # print(save)
+           
 
             soup = BeautifulSoup(save, 'html.parser')
             main_site = soup.find_all('img', {'itemprop': 'contentURL'})
-            #  print(main_site)
+           
 
             for t in main_site:
                 src = t.get('src')
@@ -279,7 +258,7 @@ def int_pom_rouge(max_pages):
 
                     full_name = ("./ananas/" + str(name) + "Ananas" + '.jpg')
 
-                    # urllib.request.urlretrieve(src, full_name)
+                   
 
                     class AppURLopener(urllib.request.FancyURLopener):
                         version = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.69 Safari/537.36"
@@ -301,19 +280,13 @@ def int_banane(max_pages):
         url = ('https://pixabay.com/fr/images/search/banane/?pagi='+str(pages))  # incrementer les page
         print(url)
 
-        # if pages%2 == 0:
-
-        # else:
-        # url = 'https://pixabay.com/images/search/pomme/'+str(pages)
 
         opening = requests.get(url)
 
         save = opening.text
-        # print(save)
 
         soup = BeautifulSoup(save, 'html.parser')
         class_item = (div.a for div in soup.find_all('div', {'class': 'item'}))
-        # print(class_item)
 
         for l in class_item:
             links = 'https://pixabay.com/' + str(l.get("href"))
@@ -323,11 +296,11 @@ def int_banane(max_pages):
 
             opening = requests.get(links)
             save = opening.text
-            # print(save)
+   
 
             soup = BeautifulSoup(save, 'html.parser')
             main_site = soup.find_all('img', {'itemprop': 'contentURL'})
-            #  print(main_site)
+     
 
             for t in main_site:
                 src = t.get('src')
@@ -338,7 +311,6 @@ def int_banane(max_pages):
 
                     full_name = ("./banane/" + str(name) + "Banane" + '.jpg')
 
-                    # urllib.request.urlretrieve(src, full_name)
 
                     class AppURLopener(urllib.request.FancyURLopener):
                         version = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.69 Safari/537.36"
