@@ -14,6 +14,8 @@ from scipy import misc ,ndimage
 
 
 # # data augmentation
+# Ce code permet de génerer d'autres images en differentes position à partir d'une image brute
+# Afin de renforcer notre dataset
 
 # In[2]:
 
@@ -42,6 +44,7 @@ def datas (dossierSource,Imgsource, dist):
 
 # In[4]:
 
+#Préciser le chemin des images sources 
 	image_path='/home/alli/Documents/Master 2 Informatique ISE/Base de données embarquée/Projet/dataset/'+str(dossierSource)+'/'+str(Imgsource)+'.jpg'
 
 # In[5]:
@@ -58,7 +61,7 @@ def datas (dossierSource,Imgsource, dist):
 
 	i = 0
 	for batch in gen.flow(image, batch_size=50,
-        	                  save_to_dir='/home/alli/Bureau/'+str(dist), save_prefix='aug', save_format='jpg'):
+        	                  save_to_dir='/home/alli/Bureau/'+str(dist), save_prefix='aug', save_format='jpg'):#Dépot des images génerées
     		i += 1
     		if i > 5:
         		break  
@@ -72,7 +75,8 @@ def datas (dossierSource,Imgsource, dist):
 
 	plots(aug,figsize=(20,7), rows=2)
 
-# In[ ]:
+# In[9]:
 
+#Exécution
 datas ("banane","banane", "banane")
 
